@@ -1,0 +1,109 @@
+<!DOCTYPE HTML>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<title>happy birthday</title>
+	<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+	<style type="text/css">
+		@font-face {
+			font-family: digit;
+			src: url('digital-7_mono.ttf') format("truetype");
+		}
+	</style>
+	<link href="css/default.css" type="text/css" rel="stylesheet">
+	<script type="text/javascript" src="js/jquery.js"></script>
+	<script type="text/javascript" src="js/garden.js"></script>
+    <script type="text/javascript" src="js/functions.js"></script>
+</head>
+
+<body>
+	<div id="mainDiv">
+		<div id="content">
+			<div id="code">
+				<span class="comments">/**</span><br />
+				<span class="space"/><span class="comments">* Hi,I'm Jill</span><br />
+				<span class="space"/><span class="comments">* I'm writing this letter to celebrate the special day.</span><br />
+				<span class="space"/><span class="comments">*/</span><br />
+				Jill me = <span class="keyword">new</span> Jill(<span class="string">"WenJie"</span>);<br />
+				Liu u = <span class="keyword">new</span> Liu(<span class="string">"ShiXiongLiu"</span>);<br />
+				<span class="comments">// 2016年6月27日，刚刚毕业的文小杰同学来到公司报到，然后遇见了刘师兄(从这开始，用英语写不下去了，接下来用中文。 </span><br />
+				me.met(u);<br />
+				<span class="comments">// 选的位子很棒，在刘师兄旁边，从此开始了向刘师兄学习(wa keng)的道路。</span><br />
+				me.studyHard(teacher u);<br />
+				<span class="comments">// 之后，经历了第一个正式的需要写代码的BI项目。</span><br />
+				me.code();<br />
+				u.debug();<br />
+				<span class="comments">// 在刘师兄的助攻下，一路披荆斩棘，成功从小菜鸟变成老菜鸟。</span><br />
+				u.help(me);<br />
+				me.growUp();<br />
+				<span class="comments">// 之后又接触了另一个BI项目。。。</span><br />
+				time.passBy();<br />
+				<span class="comments">// 后来公司人事调整，我们到了不同部门。</span><br />
+				hr.separate(u,me);<br />
+				<span class="comments">// 作为老菜鸟的文小杰有点方，同时也开始思考刘师兄一直在说的“核心竞争力”，思考自己后面的方向。
+					一路上，刘师兄给过很多建议。</span><br />
+				u.suggest();<br />
+				me.think();<br />
+				<span class="comments">// 也许不是出于个人发展，而是逃避，或者单纯想去玩，可能哪天我就去另外一个地方了。</span><br />
+				time.passBy(days.random);<br />
+				me.goSomeWhere();<br />
+				me.sayGoodbye();<br />
+				<span class="keyword">boolean</span> alive = <span class="keyword">true</span>;<br />
+				<span class="keyword">while</span> (me.alive) {<br />
+				<span class="placeholder"/><span class="comments">// 不管去哪都会记得你，记得和你们一起吃午饭的日子</span><br />
+				<span class="placeholder"/>me.remember(u);<br />
+				<span class="placeholder"/>me.remember(all);<br />
+				}<br />
+			</div>
+			<div id="loveHeart">
+				<canvas id="garden"></canvas>
+				<div id="words">
+					<div id="messages">
+						刘师兄，谢谢你~~在认识你的
+						<div id="elapseClock"></div>
+					</div>
+					<div id="loveu">
+						祝你生日快乐，愿friends forever.<br/>
+						<div class="signature">- Jill Wen</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div id="copyright">
+			Copyright © 2011 <a href=#>jill wen</a> 2009-2011
+		</div>
+	</div>
+	<script type="text/javascript">
+		var offsetX = $("#loveHeart").width() / 2;
+		var offsetY = $("#loveHeart").height() / 2 - 55;
+		var together = new Date();
+		together.setFullYear(2016, 6, 27);
+		together.setHours(9);
+		together.setMinutes(0);
+		together.setSeconds(0);
+		together.setMilliseconds(0);
+		
+		if (!document.createElement('canvas').getContext) {
+			var msg = document.createElement("div");
+			msg.id = "errorMsg";
+			msg.innerHTML = "Your browser doesn't support HTML5!<br/>Recommend use Chrome 14+/IE 9+/Firefox 7+/Safari 4+"; 
+			document.body.appendChild(msg);
+			$("#code").css("display", "none")
+			$("#copyright").css("position", "absolute");
+			$("#copyright").css("bottom", "10px");
+		    document.execCommand("stop");
+		} else {
+			setTimeout(function () {
+				startHeartAnimation();
+			}, 5000);
+
+			timeElapse(together);
+			setInterval(function () {
+				timeElapse(together);
+			}, 500);
+
+			adjustCodePosition();
+			$("#code").typewriter();
+		}
+	</script>
+</body>
+</html>
